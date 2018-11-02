@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Are you sure you want to sign out?</h1>
+	<h2>Yes, sign me out</h2>
+	<button onclick="signOut()">Sign out</button>
+</body>
+	<script src="js/cookies.js"></script>
+	<script src="js/redirect.js"></script>
+	<script src="js/userDetails.js"></script>
+	<script type="text/javascript">	
+	function signOut() {
+		setCookie("typeOfUser",	"", -1);
+		setCookie("userEmail", "", -1);
+		redirectTo("/signIn.html");
+		}
+	var typeOfUser = getTypeOfUser();
+	console.log(typeOfUser);
+	if (typeOfUser == "") {
+		redirectTo("/signIn.html");
+	}
+	</script>
+</html>

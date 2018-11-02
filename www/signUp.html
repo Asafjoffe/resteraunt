@@ -1,0 +1,56 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>signUp</h1>
+	<form action="/api/user" method="POST">
+		<table>
+			<tr>
+				<td>
+				Email : 	
+				</td>
+				<td>
+				<input type="email" name="Email">	
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Password : 
+				</td>
+				<td>
+					<input type="password" name="Password">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" name="submit">
+				</td>
+			</tr>
+			<tr id="tableRaw" style="display: none;">
+				<td colspan="2" style="text-align:  center;">
+					<span id="Message" style="color: red"></span>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<a href="/signIn.html"> I am already a user, I want to sign in</a>
+</body>
+	<script src="js/getParameters.js"></script>
+	<script src="js/cookies.js"></script>
+	<script src="js/userDetails.js"></script>
+	<script src="js/redirect.js"></script>
+	<script type="text/javascript">	
+	var typeOfUser = getTypeOfUser();
+	if (typeOfUser == "User" ) {
+		redirectTo("/index.html");
+	}
+	else if (typeOfUser == "Admin" ) {
+		redirectTo("/admin.html");
+	}
+	var q = getParameterByName('q');
+	document.getElementById('Message').innerHTML = q;
+	document.getElementById('tableRaw').style.display = "block";
+	</script>
+</html>

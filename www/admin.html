@@ -1,0 +1,48 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title>
+	
+	</title>
+	<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/navBarStyle.css">
+</head>
+<body>
+	<h1>Admin page</h1>
+		<ul>
+			<li>
+				
+				<a href="/api/orders"><i class="fas fa-angle-right"></i>See your orders</a>
+			</li>
+			<li>
+				
+				<a href="http://localhost:3000/addProduct.html"><i class="fas fa-angle-right"></i>Add product to your menu</a>
+			</li>
+			<li>
+				
+				<a href="/signOut.html"><i class="fas fa-angle-right"></i>sign out</a>
+			</li>
+		</ul>
+
+</body>
+	<script src="js/cookies.js"></script>
+	<script src="js/getParameters.js"></script>
+	<script src="js/userDetails.js"></script>
+	<script src="js/redirect.js"></script>
+	<script type="text/javascript">
+		var userEmail = getParameterByName("userEmail");
+		if (userEmail != null){
+		setCookie("userEmail", getParameterByName("userEmail"), 10);
+		setCookie("typeOfUser",	"Admin", 10);
+		}
+		//Logged in as a user
+		else if (typeOfUser() == "User"){
+			window.location.href = "/index.html"
+		}
+		// Looged in as a Admin
+		else if (typeOfUser() != "Admin"){
+			window.location.href = "/signIn.html"
+		}
+	</script>
+</html>

@@ -1,0 +1,48 @@
+</!DOCTYPE html>
+<html>
+<head>
+	<title>Add Products to your menu</title>
+</head>
+<body>
+	<form action="/api/Product" method="POST">
+		<table>
+				<th>Add Products to your menu</th>
+				<tr>
+					<td>
+						Product ID :
+						<input type="number" name="id">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Product img :
+						<input type="text" name="img">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Product Name :
+						<input type="text" name="name">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Product Price ($) :
+						<input type="number" name="price">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Product Description :
+						<input type="text" name="desc">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" name="Submit">
+					</td>
+				</tr>
+		</table>
+	</form>
+</body>
+</html>
